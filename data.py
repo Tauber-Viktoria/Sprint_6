@@ -13,4 +13,19 @@ ANSWERS = {
     7: 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
 }
 
-MAIN_URL = 'https://qa-scooter.praktikum-services.ru/'
+
+data_set_1 = {
+    'first_name': 'Тест',
+    'last_name': 'Тестовна',
+    'address': 'Доставочная улица',
+    'mobile_phone_number': '79164136022'
+}
+
+data_set_2 = {
+    'first_name': 'Тестовая',
+    'last_name': 'Тестенко',
+    'address': 'Самокатная улица',
+    'mobile_phone_number': '89776545277'
+}
+
+data_sets = [data_set_1, data_set_2]

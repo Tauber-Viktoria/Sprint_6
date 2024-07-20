@@ -1,3 +1,5 @@
+import time
+
 import pytest
 from data import data_sets
 
@@ -8,3 +10,4 @@ class TestOrderPage:
         order_page.click_to_cookie_button()
         order_page.set_first_form(data_set)
         order_page.click_to_next_button()
+        assert order_page.find_order_button(), "кнопка 'Заказать' не найдена на странице"

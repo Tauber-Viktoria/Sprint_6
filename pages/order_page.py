@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 
 from locators.OrderPageLocators import OrderPageLocators
 from pages.base_page import BasePage
+from selenium.webdriver.support.ui import Select
 
 
 class OrderPage(BasePage):
@@ -41,3 +42,6 @@ class OrderPage(BasePage):
         self.set_address(data['address'])
         self.choose_metro(data['metro'])
         self.set_mobile_phone_number(data['mobile_phone_number'])
+
+    def find_order_button(self):
+        return self.find_element_with_wait(OrderPageLocators.ORDER_BUTTON)

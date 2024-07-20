@@ -1,3 +1,4 @@
+from selenium.webdriver.common.by import By
 
 from locators.OrderPageLocators import OrderPageLocators
 from pages.base_page import BasePage
@@ -17,9 +18,16 @@ class OrderPage(BasePage):
     def set_address(self, address):
         self.find_element_with_wait(OrderPageLocators.ADDRESS_FIELD).send_keys(address)
 
-    def choose_metro(self):
+    def choose_metro(self, metro):
         self.find_element_with_wait(OrderPageLocators.METRO_FIELD).click()
-        self.find_element_with_wait(OrderPageLocators.METRO_ELEMENT).click()
+        metro_locator = self.get_metro_element_locator(metro)
+        self.find_element_with_wait(metro_locator).click()
+
+    @staticmethod
+    def get_metro_element_locator(metro):
+        method, locator_template = OrderPageLocators.METRO_ELEMENT
+        locator = (method, locator_template.format(metro))
+        return locator
 
     def set_mobile_phone_number(self, mobile_phone_number):
         self.find_element_with_wait(OrderPageLocators.MOBILE_PHONE_FIELD).send_keys(mobile_phone_number)
@@ -31,5 +39,5 @@ class OrderPage(BasePage):
         self.set_first_name(data['first_name'])
         self.set_last_name(data['last_name'])
         self.set_address(data['address'])
-        self.choose_metro()
+        self.choose_metro(data['metro'])
         self.set_mobile_phone_number(data['mobile_phone_number'])

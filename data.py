@@ -15,17 +15,19 @@ ANSWERS = {
 
 
 data_set_1 = {
-    'first_name': 'Тест',
-    'last_name': 'Тестовна',
-    'address': 'Доставочная улица',
-    'mobile_phone_number': '79164136022'
+    'first_name': 'Вика',
+    'last_name': 'Таубер',
+    'address': 'улица Ленина',
+    'metro': 'Сокольники',
+    'mobile_phone_number': '79991112233'
 }
 
 data_set_2 = {
-    'first_name': 'Тестовая',
-    'last_name': 'Тестенко',
-    'address': 'Самокатная улица',
-    'mobile_phone_number': '89776545277'
+    'first_name': 'Иван',
+    'last_name': 'Иванов',
+    'address': 'ул. Грибоедова д 6',
+    'metro': 'Бульвар Рокоссовского',
+    'mobile_phone_number': '89001112233'
 }
 
 data_sets = [data_set_1, data_set_2]

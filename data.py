@@ -19,7 +19,11 @@ data_set_1 = {
     'last_name': 'Таубер',
     'address': 'улица Ленина',
     'metro': 'Сокольники',
-    'mobile_phone_number': '79991112233'
+    'mobile_phone_number': '79991112233',
+    'rental_date': '22.07.2024',
+    'rental_period': 'сутки',
+    'scooter_color': ['black'],
+    'comment': 'нужен с держателем для телефона'
 }
 
 data_set_2 = {
@@ -27,7 +31,11 @@ data_set_2 = {
     'last_name': 'Иванов',
     'address': 'ул. Грибоедова д 6',
     'metro': 'Бульвар Рокоссовского',
-    'mobile_phone_number': '89001112233'
+    'mobile_phone_number': '89001112233',
+    'rental_date': '23.07.2024',
+    'rental_period': 'двое суток',
+    'scooter_color': ['grey', 'black'],
+    'comment': 'а есть крепление под кофе?'
 }
 
 data_sets = [data_set_1, data_set_2]

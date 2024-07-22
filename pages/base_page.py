@@ -10,6 +10,9 @@ class BasePage:
     def get_url(self, URL):
         self.driver.get(URL)
 
+    def get_current_url(self):
+        return self.driver.current_url
+
     def find_element_with_wait(self, locator):
         WebDriverWait(
             self.driver, 5).until(

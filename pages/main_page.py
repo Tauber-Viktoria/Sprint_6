@@ -3,6 +3,12 @@ from pages.base_page import BasePage
 
 
 class MainPage(BasePage):
+    def click_header_order_button(self):
+        self.find_element_with_wait(MainPageLocators.HEADER_ORDER_BUTTON).click()
+        return self.driver.current_url
+    def click_order_button(self):
+        self.find_element_with_wait(MainPageLocators.ORDER_BUTTON).click()
+        return self.driver.current_url
 
     def click_to_cookie_button(self):
         self.click_on_element(MainPageLocators.COOKIE_BUTTON)

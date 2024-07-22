@@ -88,5 +88,8 @@ class OrderPage(BasePage):
     def find_assert_button(self):
         return self.find_element_with_wait(OrderPageLocators.ACCEPT_ORDER_BUTTON)
 
-    #def click_to_accept_order_button(self):
-    #self.find_element_with_wait(OrderPageLocators.ACCEPT_ORDER_BUTTON).click()
+    def click_to_accept_order_button(self):
+        self.find_assert_button().click()
+
+    def find_order_modal(self):
+        return self.find_element_with_wait(OrderPageLocators.ORDER_MODAL)

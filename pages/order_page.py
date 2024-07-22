@@ -1,13 +1,15 @@
-import time
-
-from selenium.webdriver.common.by import By
-
 from locators.OrderPageLocators import OrderPageLocators
 from pages.base_page import BasePage
-from selenium.webdriver.support.ui import Select
 
 
 class OrderPage(BasePage):
+    def switch_to_yandex_site(self):
+        self.find_element_with_wait(OrderPageLocators.YANDEX_SITE_BUTTON).click()
+        return self.switch_to_window_contains("dzen.ru")
+
+    def switch_to_main_page(self):
+        self.find_element_with_wait(OrderPageLocators.MAIN_PAGE_BUTTON).click()
+        return self.driver.current_url
 
     def click_to_cookie_button(self):
         self.click_on_element(OrderPageLocators.COOKIE_BUTTON)
@@ -37,13 +39,6 @@ class OrderPage(BasePage):
 
     def click_to_next_button(self):
         self.click_on_element(OrderPageLocators.NEXT_BUTTON)
-
-    def set_first_form(self, data):
-        self.set_first_name(data['first_name'])
-        self.set_last_name(data['last_name'])
-        self.set_address(data['address'])
-        self.choose_metro(data['metro'])
-        self.set_mobile_phone_number(data['mobile_phone_number'])
 
     def find_order_button(self):
         return self.find_element_with_wait(OrderPageLocators.ORDER_BUTTON)
@@ -76,12 +71,6 @@ class OrderPage(BasePage):
     def set_comment(self, comment):
         self.find_element_with_wait(OrderPageLocators.COMMENT_FIELD).send_keys(comment)
 
-    def set_second_form(self, data):
-        self.set_rental_date(data['rental_date'])
-        self.choose_rental_period(data['rental_period'])
-        self.choose_scooter_color(data['scooter_color'])
-        self.set_comment(data['comment'])
-
     def click_to_order_button(self):
         self.find_element_with_wait(OrderPageLocators.ORDER_BUTTON).click()
 
@@ -93,3 +82,16 @@ class OrderPage(BasePage):
 
     def find_order_modal(self):
         return self.find_element_with_wait(OrderPageLocators.ORDER_MODAL)
+
+    def set_first_form(self, data):
+        self.set_first_name(data['first_name'])
+        self.set_last_name(data['last_name'])
+        self.set_address(data['address'])
+        self.choose_metro(data['metro'])
+        self.set_mobile_phone_number(data['mobile_phone_number'])
+
+    def set_second_form(self, data):
+        self.set_rental_date(data['rental_date'])
+        self.choose_rental_period(data['rental_period'])
+        self.choose_scooter_color(data['scooter_color'])
+        self.set_comment(data['comment'])

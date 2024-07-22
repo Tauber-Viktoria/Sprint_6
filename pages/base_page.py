@@ -24,3 +24,8 @@ class BasePage:
         element = self.find_element_with_wait(locator)
         return element.text
 
+    def switch_to_window_contains(self, partial_url):
+        handles = self.driver.window_handles
+        self.driver.switch_to.window(handles[-1])
+        WebDriverWait(self.driver, 10).until(expected_conditions.url_contains(partial_url))
+        return self.driver.current_url

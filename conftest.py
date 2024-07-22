@@ -7,7 +7,7 @@ from pages.order_page import OrderPage
 
 @pytest.fixture()
 def driver():
-    driver = webdriver.Chrome()
+    driver = webdriver.Firefox()
     yield driver
     driver.quit()
 

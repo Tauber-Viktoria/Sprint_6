@@ -7,11 +7,11 @@ from data import data_sets
 class TestOrderPage:
     def test_switch_to_yandex_site(self, order_page):
         current_url = order_page.switch_to_yandex_site()
-        assert "dzen.ru" in current_url
+        assert "dzen.ru" in current_url, "не открылась главная страница Дзена."
 
     def test_switch_to_main_page(self, order_page):
         current_url = order_page.switch_to_main_page()
-        assert current_url == URL.MAIN_URL
+        assert current_url == URL.MAIN_URL, "не произошел переход на главную страницу «Самоката»."
 
     @pytest.mark.parametrize("data_set", data_sets)
     def test_fill_first_form(self, order_page, data_set):

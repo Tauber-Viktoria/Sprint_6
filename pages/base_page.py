@@ -22,6 +22,10 @@ class BasePage:
         element = self.find_element_with_wait(locator)
         element.click()
 
+    def scroll_into_view(self, locator):
+        element = self.find_element_with_wait(locator)
+        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+
     def get_text_from_element(self, locator):
         element = self.find_element_with_wait(locator)
         return element.text

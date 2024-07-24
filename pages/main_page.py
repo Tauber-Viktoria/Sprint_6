@@ -20,8 +20,7 @@ class MainPage(BasePage):
 
     @allure.step("Прокрутить до вопросов")
     def execute_scroll(self):
-        element = self.find_element_with_wait(MainPageLocators.SUB_HEADER_LOCATOR)
-        self.driver.execute_script("arguments[0].scrollIntoView();", element)
+        self.scroll_into_view(MainPageLocators.SUB_HEADER_LOCATOR)
 
     @allure.step("Кликнуть на вопрос {num}")
     def click_to_question(self, num):

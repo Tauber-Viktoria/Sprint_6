@@ -1,6 +1,6 @@
 import pytest
 import allure
-import URL
+import url
 from data import data_sets
 
 
@@ -17,7 +17,7 @@ class TestOrderPage:
     @allure.title('Тест перехода на главную страницу «Самоката» при клике на логотип «Самокат»')
     def test_switch_to_main_page(self, order_page):
         current_url = order_page.switch_to_main_page()
-        assert current_url == URL.MAIN_URL, "не произошел переход на главную страницу «Самоката»."
+        assert current_url == url.MAIN_URL, "не произошел переход на главную страницу «Самоката»."
 
     @allure.feature('Формы заказа')
     @allure.story('Заполнение первой формы')

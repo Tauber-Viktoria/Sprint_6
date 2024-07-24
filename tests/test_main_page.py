@@ -1,6 +1,6 @@
 import pytest
 import allure
-import URL
+import url
 from data import ANSWERS
 
 
@@ -11,7 +11,7 @@ class TestMainPage:
     def test_switch_to_order_page_click_on_header_button(self, main_page):
         main_page.click_to_cookie_button()
         current_url = main_page.click_header_order_button()
-        assert current_url == URL.ORDER_URL, ("не произошел переход на страницу оформления заказа по клику на кнопку "
+        assert current_url == url.ORDER_URL, ("не произошел переход на страницу оформления заказа по клику на кнопку "
                                               "'Заказать' в хедере")
 
     @allure.feature('Переходы на страницы')
@@ -21,7 +21,7 @@ class TestMainPage:
         main_page.click_to_cookie_button()
         main_page.execute_scroll()
         current_url = main_page.click_order_button()
-        assert current_url == URL.ORDER_URL, ("не произошел переход на страницу оформления заказа по клику на кнопку "
+        assert current_url == url.ORDER_URL, ("не произошел переход на страницу оформления заказа по клику на кнопку "
                                               "'Заказать' на главной странице")
 
     @allure.feature('Вопросы и ответы')

@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-from URL import MAIN_URL, ORDER_URL
+from url import MAIN_URL, ORDER_URL
 from pages.main_page import MainPage
 from pages.order_page import OrderPage
 
